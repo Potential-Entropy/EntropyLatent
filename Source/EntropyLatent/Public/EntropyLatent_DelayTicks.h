@@ -13,7 +13,7 @@ namespace EntropyLatent
 	 * @return Handle of the started coroutine
 	 */
 	template<callable T>
-	UE5Coro::TCoroutine<> DelayTicks(const T& Callback, const int64 NumberOfTicks = 1)
+	UE5Coro::TCoroutine<> DelayTicks(const T Callback, const int64 NumberOfTicks = 1)
 	{
 		co_await UE5Coro::Latent::Ticks(NumberOfTicks);
 		Callback();

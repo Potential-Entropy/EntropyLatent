@@ -32,7 +32,7 @@ namespace EntropyLatent
 	 * @return Handle of the started coroutine
 	 */
 	template<EDelayTimeType DelayType = EDelayTimeType::GameTime, callable T>
-	UE5Coro::TCoroutine<> Delay(const std::function<void()> Callback, const float Duration)
+	UE5Coro::TCoroutine<> Delay(const T Callback, const float Duration)
 	{
 		ensure(Duration > 0);
 		if constexpr (DelayType == EDelayTimeType::GameTime)

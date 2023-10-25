@@ -26,7 +26,7 @@ void AEntropyLatentDebugActor::BeginPlay()
 	}, 5);
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Cyan, TEXT("After latent Tick function"));
 
-	EntropyLatent::Delay<EntropyLatent::EDelayTimeType::GameTime, std::function<void()>>(
+	EntropyLatent::Delay<EntropyLatent::EDelayTimeType::GameTime>(
 		[This = TStrongObjectPtr(this)]
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, TEXT("Delayed"));
