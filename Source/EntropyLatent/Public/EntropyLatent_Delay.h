@@ -23,7 +23,7 @@ namespace EntropyLatent
 	};
 
 	/**
-	 * Wait for a specified time and execute a callback afterwards.
+	 * Wait for a specified time and execute a callback afterwards.<br>
 	 * The type of time waited can be customized with the template parameter.
 	 * @tparam DelayType The typ e of time to wait
 	 * @tparam T Should always be derived automatically
@@ -55,7 +55,7 @@ namespace EntropyLatent
 	}
 
 	/**
-	 * Wait until a specified time and execute a callback afterwards.
+	 * Wait until a specified time and execute a callback afterwards.<br>
 	 * The type of time waited can be customized with the template parameter.
 	 * Usually you will want to use Delay instead!
 	 * @tparam DelayType The typ e of time to wait

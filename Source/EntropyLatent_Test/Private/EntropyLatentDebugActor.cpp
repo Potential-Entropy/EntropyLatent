@@ -35,9 +35,21 @@ void AEntropyLatentDebugActor::BeginPlay()
 				This->RootComponent->Mobility = EComponentMobility::Movable;
 				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Green, TEXT("Everything went well!"));
 			}
-		}, 0.5f);
+		}, 2.f);
 	GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Cyan, TEXT("Done"));
-	Destroy();
+
+	EntropyLatent::ExecuteOnTask([This = TWeakObjectPtr{this}]
+	{
+		EntropyLatent::ExecuteOnGameThread([This]
+		{
+			if (TStrongObjectPtr This_Ptr{This.Get()})
+			{
+				GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Orange, TEXT("Still alive"));
+			}
+		});
+	});
+
+	//Destroy();
 }
 
 // Called every frame
